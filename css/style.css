@@ -45,6 +45,9 @@ nav{
     background: var(--primary-color);
 }
 
+.fa{
+    font-size: 1.5em;
+}
 
 @media only screen and (min-width: 768px){
     
@@ -68,6 +71,10 @@ nav{
         padding: 1.1em;
         text-align: center;
     }
-   
-    
+
+    .navbar nav .secondary-nav li a{
+        display: block;
+        padding: 0.65em;
+        text-align: center;
+    }
 }
