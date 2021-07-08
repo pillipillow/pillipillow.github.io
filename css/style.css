@@ -9,7 +9,6 @@ body{
     color: white;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    height: 1500px; /*fixed nav bar test*/
 }
 
 a{
@@ -23,7 +22,11 @@ ul{
     padding: 0;
 }
 
-/*--------Navigation bar-----------*/
+section{
+    padding: 5em 2em;
+}
+
+/*------------------------------------------------------------Navigation bar-----------------------------------------------------------*/
 .navbar{
     background: #323232;
     position: fixed;
@@ -38,19 +41,28 @@ ul{
 }
 
 nav{
-    /*display: none;*/
+    display: none;
 }
 
 .navbar nav li a:hover{
-    background: var(--primary-color);
+    background:  #414141;
+}
+
+.navbar nav li.current a{
+    background:  #9BCB6C;
 }
 
 .fa{
     font-size: 1.5em;
 }
 
+/*------------------------------------------------------------Portfolio section-----------------------------------------------------------*/    
+
+
+
+
 @media only screen and (min-width: 768px){
-    
+/*------------------------------------------------------------Navigation bar-----------------------------------------------------------*/    
     .navbar .container{
         display: grid;
         grid-template-columns: 405px auto;
@@ -72,6 +84,13 @@ nav{
         text-align: center;
     }
 
+    .navbar nav .secondary-nav li a{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 927px)
+{
     .navbar nav .secondary-nav li a{
         display: block;
         padding: 0.65em;
