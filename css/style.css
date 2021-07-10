@@ -34,14 +34,59 @@ section{
     width: 100%
 }
 
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+}
+
 .navbar .logo{
     display: block;
     padding: 0.7em;
     font-size: 1.3em;
 }
 
-nav{
+.navbar .hamburger-bar{
+    z-index: 999;
+    padding-top: 0.55em;
+    padding-right: 0.7em;
+    cursor: pointer;
+}
+
+.navbar .hamburger-bar .bar1, .bar2, .bar3{
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 7px 0;
+}
+
+.change .bar1{
+  transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2{ opacity: 0;}
+
+.change .bar3{
+  transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.navbar nav{
+    position: fixed;
+    z-index: 998;
+    background:#323232;
+    width:100%;
     display: none;
+}
+
+.navbar nav li a{
+    display: block;
+    padding: 1em;
+    transition: all 0.3s ease;
+}
+
+.navbar nav .secondary-nav{
+    display: flex;
 }
 
 .navbar nav li a:hover{
@@ -56,13 +101,13 @@ nav{
     font-size: 1.5em;
 }
 
-/*------------------------------------------------------------Portfolio section-----------------------------------------------------------*/    
-
-
-
 
 @media only screen and (min-width: 768px){
 /*------------------------------------------------------------Navigation bar-----------------------------------------------------------*/    
+    .hamburger-bar{
+        display: none;
+    }
+
     .navbar .container{
         display: grid;
         grid-template-columns: 405px auto;
@@ -72,6 +117,7 @@ nav{
     .navbar nav{
         display: flex;
         justify-content: space-between;
+        position: unset;
     }
 
     .navbar nav ul{
@@ -80,7 +126,7 @@ nav{
 
     .navbar nav li a{
         display: block;
-        padding: 1.1em;
+        padding: 1.13em;
         text-align: center;
     }
 
