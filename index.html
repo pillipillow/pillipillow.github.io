@@ -5,63 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dania Kamrul Ariffin | Game Programmer</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/f566c81eba.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
     <div class="navbar">
         <div class="container">
             <div class="top-nav">
-                <a href="#" class="logo">Dania Kamrul Ariffin | Game Programmer</a>
+                <a href="#portfolio" class="logo">Dania Kamrul Ariffin | Game Programmer</a>
 
-                <div class="hamburger-bar">
+                <div class="hamburger-bar" id = "mobile-menu" onclick="toggleMenu()">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div>
             </div>
 
-            <nav>
+            <nav id="nav">
                 <ul class= "primary-nav">
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Resume</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
+                    <li><a href="#resume" onclick="toggleMenu()">Resume</a></li>
+                    <li><a href="#about-me" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                 </ul>
 
                 <ul class= "secondary-nav">
-                    <li><a href="mailto:ainuldania@gmail.com" class="fa fa-envelope"></a></li>
-                    <li><a href="https://twitter.com/pillowdev" target="_blank" class="fa fa-twitter"></a></li>
-                    <li><a href="https://github.com/pillipillow" target="_blank" class="fa fa-github"></a></li>
+                    <li><a href="mailto:ainuldania@gmail.com" class="fa fa-envelope" onclick="toggleMenu()"></a></li>
+                    <li><a href="https://twitter.com/pillowdev" target="_blank" class="fa fa-twitter" onclick="toggleMenu()"></a></li>
+                    <li><a href="https://github.com/pillipillow" target="_blank" class="fa fa-github" onclick="toggleMenu()"></a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="portfolio">
         <div class="container">
             <h1>Portfolio</h1>
         </div>
     </section>
 
-    <section class="Resume section">
+    <section class="Resume section" id="resume">
         <div class="container">
             <h1>Resume</h1>
         </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about-me">
         <div class="container">
             <h1>About me</h1>
         </div>
     </section>
 
 
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="container">
             <h1>Contact</h1>
         </div>
     </section>
+
+    <script>
+        function toggleMenu(){
+            var menuBars = document.getElementById("mobile-menu");
+            menuBars.classList.toggle("change");
+
+            var menu = document.getElementById("nav");
+            if(menu.style.maxHeight === "500px")
+            {
+                menu.style.maxHeight = "0px";
+            }
+            else
+            {
+                menu.style.maxHeight = "500px";
+            }
+        }
+    </script>
 
 
 </body>
