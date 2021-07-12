@@ -1,8 +1,0 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <h1>Some stuff I guess</h>
-  <p><a href = "https://pillipillow.github.io/ARjs-with-Threejs/">Ar.js with Three.js </a></p>
-  <p><a href = "https://pillipillow.github.io/jsartoolkit5-with-threeJS/index.html">Jsartoolkit5 with ThreeJs</a></p>
-</body>
-</html>
