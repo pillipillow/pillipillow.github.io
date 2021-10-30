@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dania Kamrul Ariffin | Game Programmer</title>
+    <title>Ainul Dania | Game Programmer</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="navbar">
         <div class="container">
             <div class="top-nav">
-                <a href="#portfolio" class="logo">Dania Kamrul Ariffin | Game Programmer</a>
+                <a href="#portfolio" class="logo">Ainul Dania | Game Programmer</a>
 
-                <div class="hamburger-bar" id = "mobile-menu" onclick="toggleMenu()">
+                <div class="hamburger-bar" id="mobile-menu" onclick="toggleMenu()">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
@@ -20,11 +20,11 @@
             </div>
 
             <nav id="nav">
-                <ul class= "primary-nav">
-                    <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
-                    <li><a href="#resume" onclick="toggleMenu()">Resume</a></li>
-                    <li><a href="#about-me" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <ul class= "primary-nav" id= "primary-nav">
+                    <li><a href="#portfolio" class = "primBtn current" onclick="toggleMenu()">Portfolio</a></li>
+                    <li><a href="#about-me"  class = "primBtn" onclick="toggleMenu()">About</a></li>
+                    <li><a href="media/Ainul Dania Resume.pdf" target="_blank" class = "primBtn" onclick="toggleMenu()">Resume</a></li>
+                    <li><a href="#contact"   class = "primBtn" onclick="toggleMenu()">Contact</a></li>
                 </ul>
 
                 <ul class= "secondary-nav">
@@ -39,25 +39,52 @@
     <section class="portfolio-section" id="portfolio">
         <div class="container">
             <h1>Portfolio</h1>
-        </div>
-    </section>
-
-    <section class="Resume section" id="resume">
-        <div class="container">
-            <h1>Resume</h1>
+            <div class= "filter-portfolio" id="filter">
+                <button class="btn current">All</button>
+                <button class="btn">Games</button>
+                <button class="btn">AR</button>
+            </div>
         </div>
     </section>
 
     <section class="about-section" id="about-me">
+        <h1>About me</h1>
         <div class="container">
-            <h1>About me</h1>
+            <div class="left-col">
+                <img src="media/about.png">
+            </div>
+            <div class= "right-col">
+                <p> I am an aspire Game Programmer currently living in Kuala Lumpur, Malaysia. I pursued to study Game Development at KDU University College, which I specialised in Game Programming. Most of my expertise are on the technical art side such as programming User Interface, Shaders, VFX and occasionaly parts of gameplay. I experience in porting games in PC, Mobile and Web Browsers.</p> 
+                
+                <p>I love working with others who have similar goals, aptitude and mutual enrichment, however I am also motivated of learning new things when I have interest in them. </p>
+    
+                <p>I am currently freelancing and working on my own personal projects, also looking for Junior Programmer positions in Malaysia.</p>
+               
+            </div>
         </div>
+        <button class= download-btn><a href="media/Ainul Dania Resume.pdf" download><i class="fa fa-download"></i>Download resume</a></button>
     </section>
 
 
     <section class="contact-section" id="contact">
+        <h1>Contact</h1>
         <div class="container">
-            <h1>Contact</h1>
+                <div class="left-col">
+                    <form action="contactform.php" method="post">
+                        <input type="text" id="name" name="name" placeholder="Name">
+                        <input type="text" id="email" name="email" placeholder="E-mail">
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                        <textarea id="message" name= "message" cols="30" rows="15" placeholder="Message"></textarea>
+                        <input type="submit" id="send" class="send-btn" value="Send">
+                    </form>
+                </div>
+
+                <div class="right-col">
+                    <ul class= "contacts">
+                        <li><i class="fa fa-phone"></i>+60-11 4021 7559</li>
+                        <li><i class="fa fa-envelope"></i>ainuldania@gmail.com</li>
+                    </ul>
+                </div>
         </div>
     </section>
 
@@ -66,6 +93,7 @@
     </div>
 
     <script>
+        //-----------------------------Navigation Bar-------------------------//
         function toggleMenu(){
             var menuBars = document.getElementById("mobile-menu");
             menuBars.classList.toggle("change");
@@ -80,6 +108,28 @@
                 menu.style.maxHeight = "500px";
             }
         }
+
+        var primarynav = document.getElementById("primary-nav");
+        var primBtns = primarynav.getElementsByClassName("primBtn");
+        for(var i= 0; i<primBtns.length; i++){
+            primBtns[i].addEventListener("click",function(){
+                var current = primarynav.getElementsByClassName("current");
+                current[0].className = current[0].className.replace(" current", "");
+                this.className += " current";
+            });
+        }
+		
+        //----------------------------Portfolio section--------------//
+        var header = document.getElementById("filter");
+        var btn = header.getElementsByClassName("btn");
+        for(var i= 0; i<btn.length; i++){
+            btn[i].addEventListener("click",function(){
+                var current = header.getElementsByClassName("current");
+                current[0].className = current[0].className.replace(" current", "");
+                this.className += " current";
+            });
+        }
+
     </script>
 </body>
 </html>

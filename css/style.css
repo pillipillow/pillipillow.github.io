@@ -8,10 +8,21 @@ html {
 
 :root{
     --primary-color: #9BCB6C;
+    --secondary-color: #323232;
+    --background-color: #414141;
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;
+}
+
+h2{
+    font-weight: normal;
 }
 
 body{
-    background: #414141;
+    background: var(--background-color);
     color: white;
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -29,12 +40,32 @@ ul{
 }
 
 section{
-    padding: 5em 2em;
+    padding: 3em 2em;
 }
 
+button{
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 0.7em 1em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background: var(--primary-color);
+}
+
+.fa{
+    font-size: 1.5em;
+}
+
+/*Mobile section*/
 /*------------------------------------------------------------Navigation bar-----------------------------------------------------------*/
 .navbar{
-    background: #323232;
+    background: var(--secondary-color);
     box-shadow: 0px 1px 6px rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
@@ -98,24 +129,112 @@ section{
 }
 
 .navbar nav li a:hover{
-    background:  #414141;
+    background: var(--primary-color);
 }
 
-.navbar nav li.current a{
-    background:  #9BCB6C;
+.navbar nav li .current{
+    background: var(--primary-color);
 }
 
-.fa{
-    font-size: 1.5em;
+/*--------------------------------------------Portfolio Section----------------------------------------*/
+.portfolio-section .filter-portfolio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-section .filter-portfolio .btn{
+    float: left;
+    font-size: 1.1em;
+}
+
+.portfolio-section .filter-portfolio .btn.current{
+    background: var(--primary-color);
+}
+
+/*---------------------------------------------About Section-------------------------------------------*/
+.about-section{
+    background-color: var(--secondary-color);
+}
+
+.about-section .right-col{
+    text-align: center;
+}
+
+.about-section img{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section .download-btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+}
+
+.about-section .download-btn .fa{
+    margin-right: 0.3em;
+}
+
+/*--------------------------------------------Contact Section------------------------------------------*/
+input[type=text], input[type=email], textarea{
+    width: 100%;
+    padding: .8em;
+    margin-bottom: 1.8em;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type=submit]
+{
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    padding: 0.7em 1em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=submit]:hover
+{
+    background-color: var(--primary-color);
+}
+
+.contact-section .right-col{
+    padding: 2em 0em;
+    text-align: center;    
+}
+
+.contact-section .right-col li{
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.contact-section .fa{
+    margin-right: 0.5em;
 }
 
 .footer{
-    background-color: #323232;
+    background-color: var(--secondary-color);
     padding: 0.5em 1.5em;
     text-align: right;
 }
 
-
+/*Bigger phone*/
 @media only screen and (min-width: 768px){
 /*------------------------------------------------------------Navigation bar-----------------------------------------------------------*/    
     .hamburger-bar{
@@ -124,7 +243,7 @@ section{
 
     .navbar .container{
         display: grid;
-        grid-template-columns: 405px auto;
+        grid-template-columns: 330px auto;
         justify-content: unset;
     }
 
@@ -150,6 +269,7 @@ section{
     }
 }
 
+/*Tablet*/
 @media only screen and (min-width: 927px)
 {
     .navbar nav .secondary-nav li a{
@@ -157,4 +277,87 @@ section{
         padding: 0.65em;
         text-align: center;
     }
+
+    /*--------------------------------------------About Section-------------------------------------------*/
+    .about-section{
+        padding: 3em 4em;
+    }
+
+    .about-section .container{
+        display: flex;
+        justify-content: space-between;  
+    }
+
+    .about-section .left-col{
+        margin-top: 2em;
+    }
+
+    .about-section .right-col{
+        text-align: justify;
+        margin-left: 5em;
+    }
+
+    .contact-section{
+        padding: 3em 4em;
+    }
+    /*--------------------------------------------Contact Section------------------------------------------*/
+    .contact-section .container{
+        display: flex;
+        justify-content: space-between;  
+    }
+
+    .contact-section .left-col{
+       width: 55%
+    }
+
+    .contact-section .right-col{
+        text-align: left;
+        margin-top: 3.5em;
+        margin-right: 4em;
+    }
+
+    .contact-section .right-col li{
+        display: block;
+        font-size: 1.3em;
+        margin: 1em;
+    }
+    
 }
+
+@media only screen and (min-width: 1080px)
+{
+    .container{
+        width: 1080px;
+        margin: 0 auto;
+    }
+}
+
+
+/*PC*/
+@media only screen and (min-width: 1450px)
+{
+    
+
+    /*--------------------------------------------About Section-------------------------------------------*/
+    .about-section{
+        padding: 3em 23em;
+    }
+
+    .about-section img{
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .about-section .left-col{
+        margin: 0em;
+    }
+
+    .about-section .right-col{
+        margin: 1em 0em 0em 5em;
+    }
+
+    .contact-section{
+        padding: 3em 23em;
+    }
+}
+
