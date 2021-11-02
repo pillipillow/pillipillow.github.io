@@ -198,10 +198,6 @@ button:hover{
     margin-left: 1em;
 }
 
-.portfolio-page .left-col{
-    margin: 2em;
-}
-
 .portfolio-page .slider{
    height: 499px;
    width: 342px;
@@ -395,6 +391,11 @@ input[type=submit]:hover
         display: flex;
         justify-content: space-between;  
     }
+
+    .portfolio-page .left-col{
+        margin: 2em;
+    }
+    
     /*--------------------------------------------About Section-------------------------------------------*/
     .about-section{
         padding: 3em 4em;
