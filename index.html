@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ainul Dania | Game Programmer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="navbar">
@@ -37,12 +37,41 @@
     </div>
 
     <section class="portfolio-section" id="portfolio">
+        <h1>Portfolio</h1>
         <div class="container">
-            <h1>Portfolio</h1>
             <div class= "filter-portfolio" id="filter">
                 <button class="btn current">All</button>
                 <button class="btn">Games</button>
                 <button class="btn">AR</button>
+            </div>
+            <div class ="gallery">
+                <div class="column AR">
+                    <div class="thumbnail" id="AR1"><a href="projects/ar-project.html">
+                        <img src="media/thumbnail.png" >
+                        <div class= overlay>
+                            <h4>Project Title </h4>
+                            <p>Description</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                
+                <img src="media/thumbnail.png">
+                <img src="media/thumbnail.png">
+                <img src="media/thumbnail.png">
+                <img src="media/thumbnail.png">
+                <img src="media/thumbnail.png">
+                <img src="media/thumbnail.png">
+                <img src="media/thumbnail.png">
+                <div class ="column Games">
+                    <div class="thumbnail" id="Game3">
+                        <img src="media/thumbnail.png">
+                        <div class="overlay">
+                            <h4>Project Title </h4>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -109,27 +138,22 @@
             }
         }
 
-        var primarynav = document.getElementById("primary-nav");
-        var primBtns = primarynav.getElementsByClassName("primBtn");
-        for(var i= 0; i<primBtns.length; i++){
-            primBtns[i].addEventListener("click",function(){
-                var current = primarynav.getElementsByClassName("current");
-                current[0].className = current[0].className.replace(" current", "");
-                this.className += " current";
-            });
-        }
-		
-        //----------------------------Portfolio section--------------//
-        var header = document.getElementById("filter");
-        var btn = header.getElementsByClassName("btn");
-        for(var i= 0; i<btn.length; i++){
-            btn[i].addEventListener("click",function(){
-                var current = header.getElementsByClassName("current");
-                current[0].className = current[0].className.replace(" current", "");
-                this.className += " current";
-            });
-        }
+        highlight("primary-nav", "primBtn");
+        highlight("filter", "btn");
 
+        function highlight(head, child){
+            var header = document.getElementById(head);
+            var btn = header.getElementsByClassName(child);
+            for(var i=0; i < btn.length; i++){
+                btn[i].addEventListener("click", function(){
+                    var current = header.getElementsByClassName("current");
+                    current[0].className = current[0].className.replace(" current","");
+                    this.className += " current";
+                })
+            }
+        }
+        
+        
     </script>
 </body>
 </html>

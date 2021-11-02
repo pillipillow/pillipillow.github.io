@@ -3,7 +3,7 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 
 :root{
@@ -69,7 +69,8 @@ button:hover{
     box-shadow: 0px 1px 6px rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
-    width: 100%
+    width: 100%;
+    z-index: 1;
 }
 
 .navbar .top-nav{
@@ -151,6 +152,116 @@ button:hover{
 .portfolio-section .filter-portfolio .btn.current{
     background: var(--primary-color);
 }
+
+.portfolio-section .gallery{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    align-items: stretch;
+}
+
+.portfolio-section .gallery img{
+    max-width: 100%;
+}
+
+.portfolio-section .gallery .thumbnail{
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio-section .gallery .overlay{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    text-align: center;
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.portfolio-section .gallery .thumbnail:hover .overlay{
+    opacity: 1;
+}
+
+/*---------------------------------------------Portfolio Page-------------------------------------------*/
+.portfolio-page{
+    padding: 3em 2em;
+}
+
+.portfolio-page .right-col{
+    text-align: justify;  
+}
+
+.portfolio-page li{
+    list-style-type: disc;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
+
+.portfolio-page .left-col{
+    margin: 2em;
+}
+
+.portfolio-page .slider{
+   height: 499px;
+   width: 342px;
+   margin: auto;
+   box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-page .wrapper{
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-page .items{
+    display: flex;
+    width: 2000px;
+    position: relative;
+    top:0;
+    left: 0;
+}
+
+.portfolio-page .items.shifting {
+    transition: left .2s ease-out;
+}
+  
+.portfolio-page .slide{
+    height: 499px;
+    width: 342px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s;
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio-page .prev, .portfolio-page .next{
+    
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 0.8em;
+    margin-top: -2.2em;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 0.3em 0.3em 0;
+    user-select: none;
+    cursor: pointer;
+}
+
+.portfolio-page .next{
+    right: 0;
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+.portfolio-page .prev:hover, .portfolio-page .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
 
 /*---------------------------------------------About Section-------------------------------------------*/
 .about-section{
@@ -234,7 +345,7 @@ input[type=submit]:hover
     text-align: right;
 }
 
-/*Bigger phone*/
+/*Tablet*/
 @media only screen and (min-width: 768px){
 /*------------------------------------------------------------Navigation bar-----------------------------------------------------------*/    
     .hamburger-bar{
@@ -269,7 +380,7 @@ input[type=submit]:hover
     }
 }
 
-/*Tablet*/
+/*Bigger Tablet/Laptop*/
 @media only screen and (min-width: 927px)
 {
     .navbar nav .secondary-nav li a{
@@ -278,6 +389,12 @@ input[type=submit]:hover
         text-align: center;
     }
 
+    /*--------------------------------------------Portfolio Section-------------------------------------------*/
+
+    .portfolio-page .container{
+        display: flex;
+        justify-content: space-between;  
+    }
     /*--------------------------------------------About Section-------------------------------------------*/
     .about-section{
         padding: 3em 4em;
@@ -311,17 +428,14 @@ input[type=submit]:hover
     }
 
     .contact-section .right-col{
-        text-align: left;
-        margin-top: 3.5em;
+        text-align: right;
+        margin-top: 22em;
         margin-right: 4em;
     }
 
     .contact-section .right-col li{
         display: block;
-        font-size: 1.3em;
-        margin: 1em;
     }
-    
 }
 
 @media only screen and (min-width: 1080px)
@@ -336,8 +450,6 @@ input[type=submit]:hover
 /*PC*/
 @media only screen and (min-width: 1450px)
 {
-    
-
     /*--------------------------------------------About Section-------------------------------------------*/
     .about-section{
         padding: 3em 23em;
