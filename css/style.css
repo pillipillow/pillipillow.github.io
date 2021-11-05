@@ -156,20 +156,30 @@ button:hover{
 .portfolio-section .gallery{
     margin-top: 2em;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .portfolio-section .gallery img{
-    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
 }
 
-.portfolio-section .gallery .thumbnail{
+.portfolio-section .thumbnail{
     position: relative;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.portfolio-section .gallery .overlay{
+.portfolio-section .thumbnail h4{
+    margin-bottom: 0;
+}
+
+.portfolio-section .thumbnail p{
+    margin-top: 0.1em;
+}
+
+
+.portfolio-section .thumbnail .overlay{
     position: absolute;
     bottom: 0;
     background: rgba(0,0,0,0.5);
@@ -177,87 +187,82 @@ button:hover{
     text-align: center;
     transition: .5s ease;
     opacity: 0;
+    font-size: 1em;
 }
 
-.portfolio-section .gallery .thumbnail:hover .overlay{
+.portfolio-section .thumbnail:hover .overlay{
     opacity: 1;
 }
 
-/*---------------------------------------------Portfolio Page-------------------------------------------*/
-.portfolio-page{
-    padding: 3em 2em;
+.portfolio-section .gallery .column{
+    display: none;
 }
 
-.portfolio-page .right-col{
-    text-align: justify;  
+.portfolio-section .gallery .show{
+    display: block;
 }
 
-.portfolio-page li{
-    list-style-type: disc;
-    margin-bottom: 0.5em;
-    margin-left: 1em;
-}
 
-.portfolio-page .slider{
-   height: 499px;
-   width: 342px;
-   margin: auto;
-   box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-page .wrapper{
-    overflow: hidden;
-    position: relative;
-}
-
-.portfolio-page .items{
-    display: flex;
-    width: 2000px;
-    position: relative;
-    top:0;
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
-}
-
-.portfolio-page .items.shifting {
-    transition: left .2s ease-out;
-}
-  
-.portfolio-page .slide{
-    height: 499px;
-    width: 342px;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 1s;
-    position: relative;
-    cursor: pointer;
-}
-
-.portfolio-page .prev, .portfolio-page .next{
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
     
+}
+
+.modal-content{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+    height: 100%;
+    display: table-cell;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+   
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+
+iframe{
+    border: none;
+    height:100%;
+    width: 100%;
+}
+
+.close{
+    z-index: 2;
     position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 0.8em;
-    margin-top: -2.2em;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 0.3em 0.3em 0;
-    user-select: none;
+    right: 0.5em;
+    font-size: 4em;
+    transition: 0.3s;
+}
+
+.close:hover{
+    color:grey;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.portfolio-page .next{
-    right: 0;
-    border-radius: 0.3em 0 0 0.3em;
-}
 
-.portfolio-page .prev:hover, .portfolio-page .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
 
 /*---------------------------------------------About Section-------------------------------------------*/
 .about-section{
@@ -374,6 +379,10 @@ input[type=submit]:hover
     .navbar nav .secondary-nav li a{
         display: none;
     }
+
+    .portfolio-section .gallery{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 /*Bigger Tablet/Laptop*/
@@ -387,13 +396,8 @@ input[type=submit]:hover
 
     /*--------------------------------------------Portfolio Section-------------------------------------------*/
 
-    .portfolio-page .container{
-        display: flex;
-        justify-content: space-between;  
-    }
-
-    .portfolio-page .left-col{
-        margin: 2em;
+    iframe{
+        height: 700px;
     }
     
     /*--------------------------------------------About Section-------------------------------------------*/
@@ -445,6 +449,11 @@ input[type=submit]:hover
         width: 1080px;
         margin: 0 auto;
     }
+
+    iframe{
+        width: 1200px;
+    }
+
 }
 
 

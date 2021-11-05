@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color: #9BCB6C;
+    --secondary-color: #323232;
+    --background-color: #414141;
+}
+
+body{
+    background: var(--secondary-color);
+    color: white;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+li{
+    margin-bottom: 0.5em;
+   
+}
+
+section{
+    padding: 3em 2em;
+}
+
+.right-col{
+    text-align: justify;  
+}
+
+video{
+    box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.2);
+}
+
+.slider{
+   margin: auto;
+   box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.2);
+}
+
+.wrapper{
+    overflow: hidden;
+    position: relative;
+}
+
+#items{
+    display: flex;
+    width: 2000px;
+    position: relative;
+    top: 0;
+}
+#items.shifting {
+    transition: left .2s ease-out;
+}
+  
+.slide{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s;
+    position: relative;
+    cursor: pointer;
+}
+
+.game-1{
+    height: 382px;
+    width: 640px;
+}
+
+.game-2{
+    height: 499px;
+    width: 342px;
+}
+
+.prev, .next{
+    
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 0.8em;
+    margin-top: -2.2em;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 0.3em 0.3em 0;
+    user-select: none;
+    cursor: pointer;
+}
+
+.next{
+    right: 0;
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+@media only screen and (min-width: 927px)
+{
+    .container{
+        display: flex;
+        justify-content: space-between;  
+    }
+
+    .left-col{
+        margin-right: 2em;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media only screen and (min-width: 1080px)
+{
+    .container{
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    .bottom-col{
+        width: 1080px;
+        margin: 0 4em;
+    }
+}

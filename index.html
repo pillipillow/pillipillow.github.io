@@ -40,41 +40,134 @@
         <h1>Portfolio</h1>
         <div class="container">
             <div class= "filter-portfolio" id="filter">
-                <button class="btn current">All</button>
-                <button class="btn">Games</button>
-                <button class="btn">AR</button>
+                <button class="btn current" onclick="filterSelection('all')">All</button>
+                <button class="btn" onclick="filterSelection('games')" >Games</button>
+                <button class="btn" onclick="filterSelection('AR')">AR</button>
+                <button class="btn" onclick="filterSelection('tools')">Tools</button>
             </div>
             <div class ="gallery">
+                <div class="column games">
+                    <div class="thumbnail" onclick="openModal()"><a href=https://pillipillow.github.io/projects/prudential-reach-to-top-2021.html target="iframe_a">
+                        <img src="media/prudential-to-top-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Prudential Powerup to ToT</h4>
+                            <p>Instamedia</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
                 <div class="column AR">
-                    <div class="thumbnail" id="AR1"><a href="projects/ar-project.html">
-                        <img src="media/thumbnail.png" >
-                        <div class= overlay>
-                            <h4>Project Title </h4>
-                            <p>Description</p>
+                    <div class="thumbnail" onclick="openModal()"><a href=https://pillipillow.github.io/projects/panasonic-cny-2021.html target="iframe_a">
+                        <img src="media/panasonic-cny-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Panasonic <br>Chinese New Year Game</br></h4>
+                            <p>Instamedia</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="column AR">
+                    <div class="thumbnail" onclick="openModal()"><a href=https://pillipillow.github.io/projects/oppo-reno-virtual-marathon-2020.html target="iframe_a">
+                        <img src="/media/OPPO-Reno-thumbnail.png">
+                        <div class="overlay">
+                            <h4>OPPO Reno Festive Virtual Marathon</h4>
+                            <p>Instamedia</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="column AR">
+                    <div class="thumbnail" onclick="openModal()"><a href=https://pillipillow.github.io/projects/AR-Photobooth-2020.html target="iframe_a">
+                        <img src="media/AR-Photobooth-thumbnail.png">
+                        <div class="overlay">
+                            <h4>AR Photobooth</h4>
+                            <p>Instamedia</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+
+                <div class="column tools">
+                    <div class="thumbnail" onclick="openModal()"><a href="https://pillipillow.github.io/projects/character-modelling-setup-tools-2019.html" target="iframe_a">
+                        <img src="/media/character-model-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Character Modelling Setup Tools</h4>
+                            <p>Personal Project</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="column tools">
+                    <div class="thumbnail" onclick="openModal()"><a href="https://pillipillow.github.io/projects/dot-connect-tools-2019.html" target="iframe_a">
+                        <img src="/media/constellation-tool-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Dot Connect Tools</h4>
+                            <p>Persona Theory</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="column tools">
+                    <div class="thumbnail" onclick="openModal()"><a href="https://pillipillow.github.io/projects/unity-level-design-tools-2019.html" target="iframe_a">
+                        <img src="/media/unity-level-tools-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Unity Level Tools</h4>
+                            <p>Persona Theory</p>
                         </div>
                     </a>
                     </div>
                 </div>
                 
-                <img src="media/thumbnail.png">
-                <img src="media/thumbnail.png">
-                <img src="media/thumbnail.png">
-                <img src="media/thumbnail.png">
-                <img src="media/thumbnail.png">
-                <img src="media/thumbnail.png">
-                <img src="media/thumbnail.png">
-                <div class ="column Games">
-                    <div class="thumbnail" id="Game3">
-                        <img src="media/thumbnail.png">
-                        <div class="overlay">
-                            <h4>Project Title </h4>
-                            <p>Description</p>
+                <div class="column games">
+                    <div class="thumbnail" onclick="openModal()"><a href=https://pillipillow.github.io/projects/cyberstryke-2019.html target="iframe_a">
+                        <img src="/media/cyberstryke-thumbnail.png">
+                        <div class = "overlay">
+                            <h4>Cyberstryke</h4>
+                            <p>Student Project</p>
                         </div>
+                        </a>
                     </div>
                 </div>
+                
+                <div class="column games">
+                    <div class="thumbnail" onclick="openModal()"><a href="https://pillipillow.github.io/projects/bridge-fortress-2017.html" target="iframe_a">
+                        <img src="media/bridge-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Bridge Fortress</h4>
+                            <p>Student Project</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+
+                <div class="column games">
+                    <div class = "thumbnail" onclick="openModal()"><a href="https://pillipillow.github.io/projects/bahadur-2017.html" target="iframe_a">
+                        <img src="media/bahadur-thumbnail.png">
+                        <div class="overlay">
+                            <h4>Bahadur</h4>
+                            <p>Student Project</p>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <div class="modal" id="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <iframe class="iframe" src="" name="iframe_a"></iframe>
+        </div>
+    </div>
 
     <section class="about-section" id="about-me">
         <h1>About me</h1>
@@ -150,6 +243,60 @@
                     current[0].className = current[0].className.replace(" current","");
                     this.className += " current";
                 })
+            }
+        }
+        
+        filterSelection("all");
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                removeClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+            }
+        }
+
+        function addClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+            }
+        }
+
+        function removeClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);     
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        //-----------------------------Modal function-------------------------//
+        var modal = document.getElementById("modal");
+        var iframe = document.getElementsByClassName("iframe");
+        var close = document.getElementsByClassName("close")[0];
+
+        function openModal(){
+            modal.style.display = "table";
+        }
+
+        close.onclick = function(){
+            modal.style.display = "none";
+            iframe.src = "";
+        }
+
+        window.onclick = function(event){
+            if(event.target == modal){
+                modal.style.display = "none";
+                iframe.src = "";
             }
         }
         
